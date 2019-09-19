@@ -1,6 +1,7 @@
 #include "for_ranged.h"
 #include<iostream>
 #include<vector>
+#include "for_ranged.h"
 
 using std::vector;
 
@@ -30,13 +31,20 @@ t
 */
 
 
-void loop_vector_w_index() 
+void loop_string_w_auto(std::string str, std::string &str1)
 {
-	vector<int> nums = {9, 10, 99, 5,67 };
-
-	for (int i = 0; i < nums.size(); ++i) 
+	//not modifiable
+	for (auto ch : str)
 	{
-		std::cout << nums[i] << "\n";
+		ch = 'j';
+		std::cout << ch << "\n";
+	}
+
+
+//modifiable
+	for (auto ch : str)
+	{
+		ch = 'j';
+		std::cout << ch << "\n";
 	}
 }
-
