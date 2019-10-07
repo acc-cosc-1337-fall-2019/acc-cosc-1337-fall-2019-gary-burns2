@@ -7,7 +7,22 @@ Iterate string count Gs and Cs, divide count by string length.
 Return quotient.
 */
 
+double get_gc_content(const string& DNA)
+{
+	int dna_size = DNA.size();
+	string letter = "";
+	double counter = 0;
+	for (int i = 0; i < dna_size; ++i)
+	{
+		letter = DNA.at(i);
+		if (letter == "C" || letter == "G")
+		{
+			counter = counter + 1;
+		}
 
+	}
+	double percent = counter / dna_size;
+	return percent;
 
 
 /*
@@ -15,6 +30,24 @@ Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
 
+string get_reverse_string(string RevDNA)
+{
+
+	int dna_size = RevDNA.size() - 1;
+	
+	string reverse = "";
+	
+	for (int i = dna_size; i >= 0; i--)
+	{
+		
+		reverse = reverse + RevDNA.at(i);
+
+	}
+
+
+
+	return reverse;
+}
 
 
 /*
@@ -28,3 +61,29 @@ c. return string
 
 */
 
+string get_dna_complement(string CompDNA)
+{
+	string reverse = get_reverse_string(CompDNA);
+	string complement = "";
+	for (int i = 0; i < reverse.size(); i++)
+	{
+		if (reverse.at(i) == 'A')
+		{
+			complement = complement + 'T';
+		}
+		else if (reverse.at(i) == 'T')
+		{
+			complement = complement + 'A';
+		}
+		else if (reverse.at(i) == 'C')
+		{
+			complement = complement + 'G';
+		}
+		else if (reverse.at(i) == 'G')
+		{
+			complement = complement + 'C';
+		}
+
+	}
+	return complement;
+}
