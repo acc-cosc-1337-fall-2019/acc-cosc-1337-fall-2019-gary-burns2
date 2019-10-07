@@ -11,7 +11,7 @@ that calculates area of the rectangle.  The class has 3 int private variables ar
 
 void Rectanglee::calculate_area()
 {
-	area = height * width
+	area = height * width;
 }
 
 int Rectanglee::get_area() const
