@@ -23,7 +23,7 @@ double get_gc_content(const string& DNA)
 	}
 	double percent = counter / dna_size;
 	return percent;
-
+}
 
 /*
 Write code for function get_reverse_string that
