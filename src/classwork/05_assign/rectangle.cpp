@@ -1,6 +1,7 @@
 //Write include statement
 #include "rectangle.h"
 #include <vector>
+#include <iostream>
 
 
 /*
@@ -17,4 +18,11 @@ void acc::Rectangle::calculate_area()
 int acc::Rectangle::get_area() const
 {
 	return area;
+}
+
+std::ostream & acc::operator<< (std::ostream & out, const Rectangle &r)
+{
+	out << "Area: " << r.area << "\n";
+
+	return out;
 }
