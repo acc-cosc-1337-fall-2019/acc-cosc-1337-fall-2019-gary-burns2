@@ -1,26 +1,15 @@
 #include<iostream>
 #include<vector>
-#include "atm.h"
-#include "bank_account.h"
-#include "customer.h"
-#include "savings_account.h"
-#include "checking_account.h"
 
-using std::cout; using std::vector; using std::cin;
-using std::reference_wrapper;
 
+using std::cout; 
 
 int main()
 {
-	CheckingAccount c(1500);
-	SavingsAccount s(500);
-	vector<reference_wrapper<BankAccount>> accounts{ c ,  s };
-
-		for (auto act : accounts)
-		{
-			cout << "Balance: " << act.get().get_balance() << "\n";
-
-		}
+	int * ptr_num = new int(5); //acquire dynamic memory
+	std::cout << "Address of: " << ptr_num << std::endl;
+	std::cout << "Value pointed to: " << *ptr_num;
+	delete ptr_num; //YOU MUST REMEMBER TO DELETE ALLOCATED MEMORY
 
 	return 0;
 }
