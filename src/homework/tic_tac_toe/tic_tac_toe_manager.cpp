@@ -17,10 +17,10 @@ ostream & operator<<(ostream & out, const TicTacToeManager & m)
 	return out;
 }
 
-void TicTacToeManager::save_game(const TicTacToe game)
+void TicTacToeManager::save_game(unique_ptr<TicTacToe>& game)
 {
-	update_winner_count(game.get_winner());
-	games.push_back(game);
+	update_winner_count(game->get_winner());
+	games.push_back(std::move(game));
 }
 
 void TicTacToeManager::update_winner_count(string winner)
