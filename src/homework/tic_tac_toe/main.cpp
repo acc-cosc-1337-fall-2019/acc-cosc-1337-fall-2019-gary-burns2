@@ -9,7 +9,8 @@ using std::cout; using std::cin; using std::string;
 int main()
 {
 	char cont = 'y';
-	TicTacToeManager manager;
+	unique_ptr<TicTacToeManager> manager =
+		std::make_unique<TicTacToeManager>();
 	string player;
 	int game_type;
 
@@ -49,7 +50,7 @@ int main()
 	} while (cont == 'y' || cont == 'Y');
 
 	cout << "History: \n";
-	cout << manager;
+	cout << *manager;
 
 	return 0;
 }

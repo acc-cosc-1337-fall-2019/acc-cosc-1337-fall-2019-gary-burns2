@@ -1,20 +1,17 @@
 #include "tic_tac_toe_manager.h"
-#include "tic_tac_toe_3.h"
-#include "tic_tac_toe_4.h"
 
 //cpp
 
 ostream & operator<<(ostream & out, const TicTacToeManager & m)
 {
-	for (auto game : m.games)
+	for (auto& game : m.games)
 	{
 		out << game << "\n";
 	}
 
-	out << "X Wins: " << m.x_win << "\n";
-	out << "O Wins: " << m.o_win << "\n";
+	out << "X wins: " << m.x_win << "\n";
+	out << "O wins: " << m.o_win << "\n";
 	out << "CAT: " << m.ties << "\n";
-
 
 	return out;
 }
@@ -37,7 +34,7 @@ void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 	c = ties;
 }
 
-std::unique_ptr<TicTacToe> TicTacToeManager::get_game(int game_type)
+unique_ptr<TicTacToe> TicTacToeManager::get_game(int game_type)
 {
 	if (game_type == 3)
 	{
